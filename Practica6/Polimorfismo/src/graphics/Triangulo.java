@@ -1,5 +1,8 @@
 package graphics;
 
+import java.awt.Color;
+import java.awt.Graphics;
+
 /**
  *
  * @author Héctor Quej Cosgaya
@@ -16,29 +19,43 @@ public class Triangulo extends FiguraGrafica {
 	public void dibujar(Graphics g) {
 		g.drawPolygon(x,y,3);
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
-	public void encojer() {
+	public void encojer(Graphics g) {
+		x[1]+=5;y[1]-=5;
+		x[2]-=5;y[2]-=5;
+		this.dibujar(g);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void agrandar() {
+	public void agrandar(Graphics g) {
+		x[1]-=5;y[1]+=5;
+		x[2]+=5;y[2]+=5;
+		this.dibujar(g);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void cambiarColor() {
+	public void cambiarColor(Graphics g, Color c) {
+		g.setColor(c);
+		this.dibujar(g);
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void mover() {
+	public void mover(Graphics g, String direccion) {
+		switch(direccion)	{
+			case "arriba": y[0]-=5; y[1]-=5; y[2]-=5; break;
+			case "abajo": y[0]+=5; y[1]+=5; y[2]+=5; break;
+			case "izquierda": x[0]-=5; x[1]-=5; x[2]-=5; break;
+			case "derecha": x[0]-=5; x[1]+=5; x[2]+=5;	break;
+		}
+		this.dibujar(g);
 		// TODO Auto-generated method stub
 		
 	}

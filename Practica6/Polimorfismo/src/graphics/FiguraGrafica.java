@@ -29,13 +29,13 @@ public abstract class FiguraGrafica {
 
     public abstract void dibujar(Graphics g);
     
-    public abstract void encojer();
+    public abstract void encojer(Graphics g);
     
-    public abstract void agrandar();
+    public abstract void agrandar(Graphics g);
     
-    public abstract void cambiarColor();
+    public abstract void cambiarColor(Graphics g, Color c);
 
-    public abstract void mover();
+    public abstract void mover(Graphics g, String direccion);
         // WTF?
         // Como muevo a un triangulo!!!???
         // Esto no estaba en mi contrato!!!
