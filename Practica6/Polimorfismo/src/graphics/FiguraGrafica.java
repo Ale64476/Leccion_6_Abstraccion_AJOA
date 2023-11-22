@@ -27,7 +27,7 @@ public abstract class FiguraGrafica {
         this.figura = figura;
     }
 
-    public abstract void dibujar();
+    public abstract void dibujar(Graphics g);
     
     public abstract void encojer();
     
